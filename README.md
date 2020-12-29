@@ -21,3 +21,6 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     restart: unless-stopped
 ```
+
+## unraid配置
+![unraid](unraid.jpg)
