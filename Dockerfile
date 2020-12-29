@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:latest
 
 ENV VERSYNC_VERSION 2.4.0
 ENV GLIBC_VERSION 2.30-r0
