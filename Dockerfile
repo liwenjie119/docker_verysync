@@ -10,7 +10,7 @@ RUN apk add --no-cache --update-cache --update curl ca-certificates \
     && apk add --allow-untrusted /tmp/glibc-bin.apk  \
     && wget http://releases.verysync.com/releases/v${VERSYNC_VERSION}/verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz \
     && tar zxvf verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz \
-    && mkdir /data \
+    && mkdir /data /root/.config &&chmod 777 /root/.config /data \
     && rm -rf /var/cache/apk/* /tmp/* /var/tmp/* verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz 
     
 WORKDIR /verysync-linux-amd64-v${VERSYNC_VERSION}
@@ -20,4 +20,4 @@ VOLUME /data
 EXPOSE 8886 22330
 
 ENTRYPOINT ["./verysync","-gui-address","0.0.0.0:8886"]
-ENTRYPOINT ["chmod","-R","777","/root/.config"]
+
