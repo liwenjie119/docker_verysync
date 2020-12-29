@@ -12,7 +12,7 @@ RUN apk add --no-cache --update-cache --update curl ca-certificates \
     && tar zxvf verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz \
     && mkdir /data \
     && rm -rf /var/cache/apk/* /tmp/* /var/tmp/* verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz \
-	&& chmod -R 777 /root/.config
+
     
 WORKDIR /verysync-linux-amd64-v${VERSYNC_VERSION}
 
@@ -21,3 +21,4 @@ VOLUME /data
 EXPOSE 8886 22330
 
 ENTRYPOINT ["./verysync","-gui-address","0.0.0.0:8886"]
+ENTRYPOINT ["chmod","-R","777","/root/.config"]
