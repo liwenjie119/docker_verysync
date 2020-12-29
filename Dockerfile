@@ -11,8 +11,7 @@ RUN apk add --no-cache --update-cache --update curl ca-certificates \
     && wget http://releases.verysync.com/releases/v${VERSYNC_VERSION}/verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz \
     && tar zxvf verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz \
     && mkdir /data \
-    && rm -rf /var/cache/apk/* /tmp/* /var/tmp/* verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz \
-
+    && rm -rf /var/cache/apk/* /tmp/* /var/tmp/* verysync-linux-amd64-v${VERSYNC_VERSION}.tar.gz 
     
 WORKDIR /verysync-linux-amd64-v${VERSYNC_VERSION}
 
