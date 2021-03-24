@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV VERSYNC_VERSION 2.4.0
+ENV VERSYNC_VERSION 2.5.5
 ENV GLIBC_VERSION 2.30-r0
 
 RUN apk add --no-cache --update-cache --update curl ca-certificates \
